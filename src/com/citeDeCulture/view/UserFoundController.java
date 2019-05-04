@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 package com.citeDeCulture.view;
-import com.citedeCuture.gallery.GalleryFXDemo;
+import com.citedeCuture.image.GalleryFXDemo;
 import com.citeDeCulture.entities.Espace;
 import com.citeDeCulture.sercicesImpl.EspaceServiceImpl;
 import com.citeDeCulture.utils.DataSource;
 import com.citeDeCulture.utils.LibraryAssistantUtil;
-import com.citedeCuture.gallery.DisplayShelfSample;
+import com.citedeCuture.image.DisplayShelfSample;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -278,7 +278,6 @@ public class UserFoundController implements Initializable {
             stage.setTitle("Reserver Space");
             stage.setScene(new Scene(parent));
             stage.show();
-            LibraryAssistantUtil.setStageIcon(stage);
 
             stage.setOnHiding((e) -> {
                 handleRefresh(new ActionEvent());

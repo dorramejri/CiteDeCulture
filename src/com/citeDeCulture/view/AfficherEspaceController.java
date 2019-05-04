@@ -127,7 +127,7 @@ ObservableList<Espace> list = FXCollections.observableArrayList();
             stage.setTitle("Edit Space");
             stage.setScene(new Scene(parent));
             stage.show();
-            LibraryAssistantUtil.setStageIcon(stage);
+           
 
             stage.setOnHiding((e) -> {
                 handleRefresh(new ActionEvent());

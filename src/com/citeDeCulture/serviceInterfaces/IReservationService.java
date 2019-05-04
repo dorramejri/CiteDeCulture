@@ -16,7 +16,6 @@ import java.util.List;
  * @author Mejri Dorra
  */
 public interface IReservationService extends IGenericService<Reservation>{
-    public List<Event> findEvent(Date date);
     public List<Espace> findEspace(Date date);
     //public Concours find(String nom); 
 }

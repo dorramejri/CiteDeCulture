@@ -1,4 +1,4 @@
-package com.citedeCuture.gallery;
+package com.citedeCuture.image;
 
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;

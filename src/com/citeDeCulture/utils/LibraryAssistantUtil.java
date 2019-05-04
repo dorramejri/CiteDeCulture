@@ -22,7 +22,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import com.citedeCuture.export.pdf.ListToPDF;
+import com.citedeCuture.pdf.ListToPDF;
 
 public class LibraryAssistantUtil {
 
@@ -31,9 +31,7 @@ public class LibraryAssistantUtil {
     private static final SimpleDateFormat DATE_TIME_FORMAT = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss a");
     private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd-MM-yyyy");
 
-    public static void setStageIcon(Stage stage) {
-        stage.getIcons().add(new Image(ICON_IMAGE_LOC));
-    }
+   
 
     public static Object loadWindow(URL loc, String title, Stage parentStage) {
         Object controller = null;
@@ -50,7 +48,7 @@ public class LibraryAssistantUtil {
             stage.setTitle(title);
             stage.setScene(new Scene(parent));
             stage.show();
-            setStageIcon(stage);
+            
         } catch (IOException ex) {
             ex.printStackTrace();
         }

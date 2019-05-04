@@ -1,4 +1,4 @@
-package com.citedeCuture.export.pdf;
+package com.citedeCuture.pdf;
 
 import be.quodlibet.boxable.BaseTable;
 import be.quodlibet.boxable.datatable.DataTable;

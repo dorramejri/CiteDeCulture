@@ -31,34 +31,7 @@ public class ReservationServiceImpl implements IReservationService{
         connection=DataSource.getInstance().getConnection();
     }
         
-    @Override
-    public List<Event> findEvent(Date date) {
-        List<Event> e=new ArrayList<>() ;
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd"); 
-        String query="select e.* from event e join reservation r on e.idevent = r.idev "
-                + "where r.dateres = " +sdf.format(date);
-		try {
-			Statement statement = connection.createStatement();
-			ResultSet resultSet = statement.executeQuery(query);
-			
-			while(resultSet.next()) // No while loop needed Only one result is returned 
-                        {			// from the database the id is UNIQUE;
-			e.add(new Event(resultSet.getInt("idevent"),
-                                resultSet.getDate("datedebut"),
-                                resultSet.getString("lieu"),
-                                resultSet.getString("libelle"),
-                                resultSet.getInt("ticket"),
-                                resultSet.getDate("datefin"),
-                                resultSet.getDouble("prixunitaire"),
-				resultSet.getString("type")));
-		}} 
-                catch (SQLException ex) 
-                {
-			ex.printStackTrace();
-		}
-		return e;
-    }
-
+   
     @Override
     public List<Espace> findEspace(Date date) {
         List<Espace> e=new ArrayList<>() ;
@@ -96,7 +69,6 @@ public class ReservationServiceImpl implements IReservationService{
 			resultSet.next();
                         
 			 all=new Reservation(resultSet.getInt("idres"),
-                                 resultSet.getInt("idrev"),
                                  resultSet.getInt("idres"),
                                 resultSet.getDate("dateres")
                                 );
@@ -120,7 +92,6 @@ public class ReservationServiceImpl implements IReservationService{
 			while(resultSet.next())
                         { 
 			 all.add(new Reservation(resultSet.getInt("idres"),
-                                 resultSet.getInt("idrev"),
                                  resultSet.getInt("idres"),
                                 resultSet.getDate("dateres"))
                                 );
@@ -138,15 +109,13 @@ public class ReservationServiceImpl implements IReservationService{
     public int create(Reservation espace) {
         int rowInserted = 0;
 		String query = "INSERT INTO reservation"
-				+ " idev, ides, dateres"
-				+ " VALUES ( ?,?,?)";
+				+ "(ides, dateres)"
+				+ " VALUES (?,?)";
 		
 		try {
                         PreparedStatement preparedStatement=connection.prepareStatement(query);
-			preparedStatement.setInt(1, espace.getIdev());
-                        preparedStatement.setInt(2, espace.getIdes());
-			preparedStatement.setDate(3,new java.sql.Date(espace.getDateRES().getTime()));
-			preparedStatement.setInt(4,espace.getIdres());
+                        preparedStatement.setInt(1, espace.getIdes());
+			preparedStatement.setDate(2,new java.sql.Date(espace.getDateRES().getTime()));
 			rowInserted = preparedStatement.executeUpdate();		
 		} 
                 catch (SQLException e)
@@ -163,15 +132,14 @@ public class ReservationServiceImpl implements IReservationService{
     public int edit(Reservation espace) {
         int updated = 0;
 		String query = "UPDATE reservation SET"
-				+ " idev=?, ides=?, dateres=?"
+				+ "ides=?, dateres=?"
 				+ " WHERE idres=?";
 		
 		try {
 			PreparedStatement preparedStatement=connection.prepareStatement(query);
-			preparedStatement.setInt(1, espace.getIdev());
-                        preparedStatement.setInt(2, espace.getIdes());
-			preparedStatement.setDate(3,new java.sql.Date(espace.getDateRES().getTime()));
-			preparedStatement.setInt(4,espace.getIdres());
+                        preparedStatement.setInt(1, espace.getIdes());
+			preparedStatement.setDate(2,new java.sql.Date(espace.getDateRES().getTime()));
+			preparedStatement.setInt(3,espace.getIdres());
 			updated = preparedStatement.executeUpdate();
 			
                         if (updated>0) 

@@ -13,13 +13,11 @@ import java.util.Date;
  */
 public class Reservation {
     private int idres;
-    private int idev;
     private int ides;
     private Date dateRES;
 
-    public Reservation(int idres, int idev, int ides,Date dateRES) {
+    public Reservation(int idres, int ides,Date dateRES) {
         this.idres = idres;
-        this.idev = idev;
         this.ides = ides;
         this.dateRES=dateRES;
     }
@@ -27,8 +25,7 @@ public class Reservation {
     public Reservation() {
     }
 
-    public Reservation(int idev, int ides,Date dateRES) {
-        this.idev = idev;
+    public Reservation( int ides,Date dateRES) {
         this.ides = ides;
         this.dateRES=dateRES;
     }
@@ -48,15 +45,6 @@ public class Reservation {
     public void setDateRES(Date dateRES) {
         this.dateRES = dateRES;
     }
-
-    public int getIdev() {
-        return idev;
-    }
-
-    public void setIdev(int idev) {
-        this.idev = idev;
-    }
-
     public int getIdes() {
         return ides;
     }
