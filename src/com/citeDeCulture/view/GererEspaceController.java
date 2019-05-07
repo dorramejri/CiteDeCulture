@@ -33,9 +33,7 @@ public class GererEspaceController implements Initializable {
         // TODO
     }    
 
-    @FXML
-    private void home(MouseEvent event) {
-    }
+    
 
     @FXML
     private void foundEspace(MouseEvent event) throws IOException {
@@ -67,9 +65,6 @@ public class GererEspaceController implements Initializable {
             stage.show();
     }
 
-    @FXML
-    private void logout(MouseEvent event) {
-    }
 
     @FXML
     private void baxk(MouseEvent event) throws IOException {

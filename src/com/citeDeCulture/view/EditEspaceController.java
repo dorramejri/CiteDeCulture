@@ -52,8 +52,6 @@ public class EditEspaceController implements Initializable {
     private Button img;
     @FXML
     private ImageView imag;
-    @FXML
-    private ImageView back;
     String image="ff.png";
 
     /**
@@ -137,9 +135,6 @@ public class EditEspaceController implements Initializable {
         }
         return true;
     } 
-    @FXML
-    private void backHome(MouseEvent event) {
-    }
     void inflateUI(Espace e) {
        libelle.setText(e.getLibelle());
         place.setText(String.valueOf(e.getNombrePlace()));

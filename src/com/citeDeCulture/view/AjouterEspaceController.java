@@ -52,8 +52,6 @@ public class AjouterEspaceController implements Initializable {
     @FXML
     private ImageView imag;
     String image="ff.png";
-    @FXML
-    private ImageView back;
 
     /**
      * Initializes the controller class.

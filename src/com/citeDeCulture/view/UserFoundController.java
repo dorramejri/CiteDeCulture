@@ -318,8 +318,5 @@ public class UserFoundController implements Initializable {
     private void handleBookDeleteOption(ActionEvent event) {    
     }
     
-    @FXML
-    private void home(MouseEvent event) {
-    }
     
 }

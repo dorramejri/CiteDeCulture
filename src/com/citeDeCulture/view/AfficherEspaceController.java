@@ -82,7 +82,7 @@ ObservableList<Espace> list = FXCollections.observableArrayList();
         typeEspaceCol.setCellValueFactory(new PropertyValueFactory<>("typeEspace"));
         statusCol.setCellValueFactory(new PropertyValueFactory<>("status"));
         prixCol.setCellValueFactory(new PropertyValueFactory<>("prix"));
-        imageCol.setCellValueFactory(new PropertyValueFactory<>("image"));
+        //imageCol.setCellValueFactory(new PropertyValueFactory<>("image"));
         //eventCol.setCellValueFactory(new PropertyValueFactory<>("prix"));
     }
 

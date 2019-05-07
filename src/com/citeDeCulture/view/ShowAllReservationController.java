@@ -69,6 +69,7 @@ ObservableList<Reservation> list = FXCollections.observableArrayList();
 
     private void initCol() {
         nom.setCellValueFactory(new PropertyValueFactory<>("ides"));
+         nom.setCellValueFactory(new PropertyValueFactory<>("idres"));
         date.setCellValueFactory(new PropertyValueFactory<>("dateRES"));
     }
    private void loadData() {
@@ -184,31 +185,5 @@ ObservableList<Reservation> list = FXCollections.observableArrayList();
     }
     @FXML
     private void handleSpaceDetaille(ActionEvent event) {
-        ReservationServiceImpl esi =new ReservationServiceImpl();
-         Reservation selectedForEdit = tableView.getSelectionModel().getSelectedItem();
-        if (selectedForEdit == null) {
-            AlertMaker.showSimpleAlert("error", "No Reservation selected ,Please select a Reservation for edit");
-            return;
-        }
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass()
-                    .getResource("/Com/citeDeCulture/view/FoundReservation.fxml"));
-            Parent parent = loader.load();
-            FoundReservationController controller = (FoundReservationController) loader.getController();
-            controller.inflateUI(selectedForEdit);
-            
-            Stage stage = new Stage(StageStyle.DECORATED);
-            stage.setTitle("Detaille Espace");
-            stage.setScene(new Scene(parent));
-            stage.show();
-           
-
-            stage.setOnHiding((e) -> {
-                handleRefresh(new ActionEvent());
-            });
-            
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
     }
 }
