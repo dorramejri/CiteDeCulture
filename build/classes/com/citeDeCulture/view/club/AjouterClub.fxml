@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../ressources/dark-theme.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.citeDeCulture.view.club.AjouterClubController">
+   <children>
+      <AnchorPane id="AnchorPane" prefHeight="510.0" prefWidth="662.0" stylesheets="@../ressources/dark-theme.css">
+         <children>
+            <TextField fx:id="libelle" layoutX="70.0" layoutY="138.0" prefHeight="37.0" prefWidth="168.0" promptText="libelle" style="-fx-background-color: 060606; -fx-border-color: ffb200;" />
+            <TextField fx:id="membre" layoutX="70.0" layoutY="226.0" prefHeight="39.0" prefWidth="168.0" promptText="membre" style="-fx-background-color: 060606; -fx-border-color: ffb200;" />
+            <TextField fx:id="activite" layoutX="352.0" layoutY="138.0" prefHeight="39.0" prefWidth="168.0" promptText="activite" style="-fx-background-color: 060606; -fx-border-color: ffb200;" />
+            <TextField fx:id="description" layoutX="352.0" layoutY="226.0" prefHeight="39.0" prefWidth="168.0" promptText="description" style="-fx-background-color: 060606; -fx-border-color: ffb200;" />
+            <Button fx:id="ajouter" layoutX="326.0" layoutY="318.0" mnemonicParsing="false" onAction="#addClub" prefHeight="43.0" prefWidth="220.0" style="-fx-border-color: white;" text="Ajouter Club" />
+            <Button fx:id="annuler" layoutX="58.0" layoutY="318.0" mnemonicParsing="false" onAction="#annuler" prefHeight="43.0" prefWidth="220.0" style="-fx-border-color: white;" text="Annuler" />
+            <Text fill="WHITE" layoutX="105.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter Club" textAlignment="CENTER" wrappingWidth="414.75">
+               <font>
+                  <Font name="Calibri" size="55.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
