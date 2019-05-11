@@ -28,10 +28,10 @@ public class EmailUtil {
             LOGGER.log(Level.INFO, "Initiating email sending task. Sending to {}");
             try {
                 String host ="smtp.gmail.com" ;
-            String user = "dorra.mejri@esprit.tn";
-            String pass = "ilove22ilove**info";
+            String user = "culturecite2@gmail.com";
+            String pass = "D123456789d*";
             String to = receiver;
-            String from = "dorra.mejri@esprit.tn";
+            String from = "culturecite2@gmail.com";
             String subject = sub;
             String messageText = Text;
             boolean sessionDebug = false;
