@@ -52,7 +52,7 @@ public class EditReservationController implements Initializable {
             if(x!=0)
             {
                     FXMLLoader loader = new FXMLLoader(getClass()
-                    .getResource("/Com/citeDeCulture/view/ConfirmerReservation.fxml"));
+                    .getResource("/Com/citeDeCulture/view/espace/ConfirmerReservation.fxml"));
                     Parent parent = loader.load();
             ConfirmerReservationController controller = (ConfirmerReservationController) loader.getController();
 

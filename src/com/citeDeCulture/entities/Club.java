@@ -65,19 +65,14 @@ public class Club {
     public void setActivite(String activite) {
         this.activite = activite;
     }
-
     public String getDescription() {
         return description;
     }
-
     public void setDescription(String description) {
         this.description = description;
     }
-
     @Override
     public String toString() {
         return "Club{" + "id=" + id + ", nom=" + nom + ", membre=" + membre + ", activite=" + activite + ", description=" + description + '}';
-    }
-    
-    
+    }     
 }

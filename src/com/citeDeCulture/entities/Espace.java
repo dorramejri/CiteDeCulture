@@ -117,7 +117,9 @@ public class Espace {
             events+=this.event.get(i).toString();
         return "id= " + id + ", libelle= " + libelle + "\n, nombrePlace= " + nombrePlace + ", typeEspace= " + typeEspace + "\n, status=" + status ;
     }
-    
+  public boolean verifier(String libelle, int nombrePlace, String typeEspace, String status,double prix){
+  return libelle.equals("")||nombrePlace<0||prix<=0||status.equals("")||typeEspace.equals("") ;
+  }
         
         
 

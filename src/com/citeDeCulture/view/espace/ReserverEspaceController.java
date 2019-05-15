@@ -61,7 +61,7 @@ public class ReserverEspaceController implements Initializable {
             if(x!=0)
             {
                     FXMLLoader loader = new FXMLLoader(getClass()
-                    .getResource("/Com/citeDeCulture/view/ConfirmerReservation.fxml"));
+                    .getResource("/Com/citeDeCulture/view/espace/ConfirmerReservation.fxml"));
                     Parent parent = loader.load();
             ConfirmerReservationController controller = (ConfirmerReservationController) loader.getController();
 
@@ -79,7 +79,5 @@ public class ReserverEspaceController implements Initializable {
     private void annuler(ActionEvent event) {
         nom.clear();
         date.getEditor().clear();
-    }
-
-    
+    } 
 }

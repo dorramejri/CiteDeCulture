@@ -248,7 +248,7 @@ public class UserFoundController implements Initializable {
         }
         try {
             FXMLLoader loader = new FXMLLoader(getClass()
-                    .getResource("/Com/citeDeCulture/view/ReserverEspace.fxml"));
+                    .getResource("/Com/citeDeCulture/view/espace/ReserverEspace.fxml"));
             Parent parent = loader.load();
             ReserverEspaceController controller = (ReserverEspaceController) loader.getController();
             controller.inflateUI(selectedForEdit);

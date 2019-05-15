@@ -63,8 +63,21 @@ public class AjouterEspaceController implements Initializable {
    @FXML
     private void addEspace(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        if(libelle.getText().equals("")
+                ||place.getText().contains("")
+                ||type.getText().equals("")||
+                statut.getText().equals("")||
+                prix.getText().equals(""))
+        {
+            alert.setTitle("error");
+                        alert.setContentText("verifier champs" );
+                        alert.show();
+        }
+        else
+        {
          Espace espace = new Espace(libelle.getText(),Integer.parseInt(place.getText()),type.getText(),statut.getText(),Double.parseDouble(prix.getText()),image);
-            EspaceServiceImpl esi = new EspaceServiceImpl();
+         
+         EspaceServiceImpl esi = new EspaceServiceImpl();
            int x= esi.create(espace);
             if(x==0){
             
@@ -79,8 +92,7 @@ public class AjouterEspaceController implements Initializable {
                         alert.setContentText("Espace ajouté" );
                         alert.show();
             }
-       
-        
+         }
     }
     @FXML
     private void annuler(ActionEvent event) throws Exception {
@@ -137,7 +149,3 @@ public class AjouterEspaceController implements Initializable {
     
 
 }
-    
-
-
-
