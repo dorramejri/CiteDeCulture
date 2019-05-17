@@ -42,7 +42,7 @@ import javafx.stage.StageStyle;
  *
  * @author Mejri Dorra
  */
-public class FoundEspaceController_1 implements Initializable {
+public class FoundEspaceController implements Initializable {
 ObservableList<Espace> list = FXCollections.observableArrayList();
     @FXML
     private TextField libelle;
@@ -76,7 +76,7 @@ ObservableList<Espace> list = FXCollections.observableArrayList();
     private TableColumn<Espace, Double> prixCol;
     Connection connection=null;
     
-    public FoundEspaceController_1() {
+    public FoundEspaceController() {
         connection=DataSource.getInstance().getConnection();
     }
     /**
@@ -227,7 +227,7 @@ ObservableList<Espace> list = FXCollections.observableArrayList();
         }
         try {
             FXMLLoader loader = new FXMLLoader(getClass()
-                    .getResource("/Com/citeDeCulture/view/EditEspace.fxml"));
+                    .getResource("/Com/citeDeCulture/view/espace/EditEspace.fxml"));
             Parent parent = loader.load();
             EditEspaceController controller = (EditEspaceController) loader.getController();
             controller.inflateUI(selectedForEdit);

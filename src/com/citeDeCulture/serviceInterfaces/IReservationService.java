@@ -6,7 +6,6 @@
 package com.citeDeCulture.serviceInterfaces;
 
 import com.citeDeCulture.entities.Espace;
-import com.citeDeCulture.entities.Event;
 import com.citeDeCulture.entities.Reservation;
 import java.util.Date;
 import java.util.List;

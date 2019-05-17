@@ -20,7 +20,6 @@ public class Espace {
         private String status;
         private double prix;
         private String image;
-        private List<Event> event = new ArrayList();
 
     public Espace(int id, String libelle, int nombrePlace, String typeEspace, String status,double prix,String image) {
         this.id = id;
@@ -102,20 +101,10 @@ public class Espace {
         this.status = status;
     }
 
-    public List<Event> getEvent() {
-        return event;
-    }
-
-    public void setEvent(List<Event> event) {
-        this.event = event;
-    }
-
+   
     @Override
     public String toString() {
-        String events="";
-        for(int i=0; i<this.event.size();i++)
-            events+=this.event.get(i).toString();
-        return "id= " + id + ", libelle= " + libelle + "\n, nombrePlace= " + nombrePlace + ", typeEspace= " + typeEspace + "\n, status=" + status ;
+                return "id= " + id + ", libelle= " + libelle + "\n, nombrePlace= " + nombrePlace + ", typeEspace= " + typeEspace + "\n, status=" + status ;
     }
   public boolean verifier(String libelle, int nombrePlace, String typeEspace, String status,double prix){
   return libelle.equals("")||nombrePlace<0||prix<=0||status.equals("")||typeEspace.equals("") ;
